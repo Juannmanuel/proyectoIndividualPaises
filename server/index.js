@@ -4,7 +4,7 @@ const { conn, Country } = require('./src/db.js');
 
 const PORT = 3001;
 
-conn.sync({force: true }).then(() => {
+conn.sync({force: false }).then(() => {
   server.listen(PORT, async () => {
      const fullDB = await Country.findAll()
     if (!fullDB.length) {
@@ -14,13 +14,14 @@ conn.sync({force: true }).then(() => {
           id: pais.cca3,
           commonName: pais.name.common,
           officialName: pais.name.official,
-          flag: pais.flags.png,
+          flags: pais.flags.png,
           continent: pais.region,
           capital: pais.capital ? pais.capital[0] : "No hay capital",
           population: pais.population,
           maps: pais.maps ? pais.maps.googleMaps : "No hay mapa disponible",
           languages: pais.languages ? pais.languages : "No hay idiomas disponibles",
-          // borders: pais.borders ? pais.borders: "No hay pais limitrofes"
+          flag: pais.flag ? pais.flag : null
+          
         }
       })
       await Country.bulkCreate(countryDB)

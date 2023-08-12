@@ -18,7 +18,7 @@ module.exports = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false
     },
-    flag: {
+    flags: {
       type: DataTypes.STRING,
       allowNull: false
     },
@@ -40,9 +40,9 @@ module.exports = (sequelize) => {
     languages: {
       type: DataTypes.JSON
     },
-    // borders: {
-    //   type: DataTypes.ARRAY
-    // }
+    flag: {
+      type: DataTypes.TEXT
+    }
     
 }, {timestamps: false});
 };

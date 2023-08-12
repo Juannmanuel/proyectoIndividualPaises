@@ -1,0 +1,70 @@
+/* Detail.module.css */
+
+/* Estilos para el contenedor del detalle */
+.detailContainer {
+  padding: 10px;
+  margin-top: 30px;
+  border: 1px solid #ac9d9d;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
+  background-color: #ffffff;
+  display: flex;
+  flex-direction: column; /* Cambiado de 'row' a 'column' */
+  align-items: center; /* Alineado al centro horizontal */
+}
+
+/* Estilos para los títulos del detalle */
+.detailTitle {
+  font-size: 2rem;
+  color: #160f0f;
+  margin-bottom: 10px;
+}
+
+/* Estilos para la imagen en el detalle */
+.detailImage img {
+  border-radius: 20px;
+  max-width: 100%;
+}
+
+/* Estilos para los párrafos en el detalle */
+.detailParagraph {
+  font-size: 1.1rem;
+  line-height: 1;
+  color: #010000;
+  margin-bottom: 15px;
+}
+
+/* Estilos para el botón */
+.detailButton {
+  background-color: #007bff;
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.detailButton:hover {
+  background-color: #7394b7;
+}
+
+/* Estilos para la lista de actividades */
+.detailActivities {
+  list-style-type: disc;
+  padding-left: 20px;
+  text-align: left; /* Alineado a la izquierda */
+}
+
+/* Estilos para los elementos de la lista */
+.detailActivities li {
+  font-size: 1.1rem;
+  color: #555555;
+  margin-bottom: 5px;
+}
+
+/* Estilos para el párrafo y encabezados secundarios */
+.detailParrafo {
+  text-align: left;
+  font-size: 22px;
+  margin-top: 20px; /* Agregado margen superior */
+}

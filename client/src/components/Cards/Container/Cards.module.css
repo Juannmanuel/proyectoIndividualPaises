@@ -1,0 +1,50 @@
+.Cards {
+    width: 99%;
+    height: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 auto; /* Para centrar horizontalmente */
+    margin-top: 100px; /* Ajusta la distancia desde arriba según tus necesidades */
+  }
+.buttonSelect {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .buttonSelect select {
+    padding: 10px;
+    margin: 0 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: white;
+    font-size: 16px;
+    outline: none;
+    transition: border-color 0.3s;
+  }
+  
+  .buttonSelect select:focus {
+    border-color: #007bff;
+  }
+  
+  .buttonSelect select:hover {
+    border-color: #66a3ff;
+  }
+  
+  /* Para los botones */
+  .button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+  
+  .button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
