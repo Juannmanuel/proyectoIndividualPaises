@@ -8,8 +8,7 @@ import {
   GET_ACTIVITIES,
   FILTER_ACTIVITIES,
   FILTER_ACTIVITY_FOR_NAME,
-  filter,
-  filterActivityForName
+
 } from "./actions";
 
 const globalState = {
@@ -17,7 +16,8 @@ const globalState = {
   copyCountries: [],
   activities: [],
   copyActivities: [],
-  detail: {}
+  detail: {},
+  updetaActivity: {}
 };
 
 function rootReducer(state = globalState, action) {
@@ -29,20 +29,31 @@ function rootReducer(state = globalState, action) {
         copyCountries: action.payload,
       };
     case GET_DITAIL:
-      return { ...state, detail: action.payload };
+      return {
+         ...state,
+          detail: action.payload };
+
+
     case GET_BY_NAME:
-      return { ...state, copyCountries: [...action.payload] };
+      return {
+         ...state,
+          copyCountries: [...action.payload] };
     case ORDER:
-      
-      let countriesOrder = [...state.countries];
-      countriesOrder.sort((a, b) => {
-        if (action.payload === "AaZ") {
-          return a.commonName.localeCompare(b.commonName);
+         let countriesOrder = [...state.countries];
+         countriesOrder.sort((a, b) => {
+         if (action.payload === "AaZ") {
+        return a.commonName.localeCompare(b.commonName);
         } else if (action.payload === "ZaA") {
-          return b.commonName.localeCompare(a.commonName);
+        return b.commonName.localeCompare(a.commonName);
         }
       });
-      return { ...state, copyCountries: action.payload === "AaZ" || action.payload === "ZaA" ? countriesOrder : state.countries };
+      return { 
+         ...state,
+         copyCountries: action.payload === "AaZ" || action.payload === "ZaA" ?
+         countriesOrder 
+         : state.countries };
+
+
     case POPULATION:
       let populationFilter = [...state.copyCountries]
       if (action.payload === "mayor") {
@@ -54,29 +65,49 @@ function rootReducer(state = globalState, action) {
           return a.population - b.population
         })
       }
-      return { ...state, copyCountries: action.payload === "mayor" || action.payload === "menor" ? populationFilter : state.countries };
+      return { 
+        ...state,
+        copyCountries: action.payload === "mayor" || action.payload === "menor" 
+        ? populationFilter 
+        : state.countries };
+
+
     case CONTINENT:
-      let continentFilter = [...state.countries]
-      const functionFilter = action.payload === "todos"
+        let continentFilter = [...state.countries]
+        const functionFilter = action.payload === "todos"
         ? continentFilter
         : continentFilter.filter((country) => country.continent == action.payload)
-      return { ...state, copyCountries: functionFilter };
+      return { 
+        ...state,
+         copyCountries: functionFilter };
 
 
 
     case GET_ACTIVITIES:
-      return { ...state, activities: action.payload, copyActivities: action.payload }
+      return { 
+        ...state,
+        activities: action.payload,
+        copyActivities: action.payload }
 
 
     case FILTER_ACTIVITIES:
       const filterActivity = [...state.copyActivities]
       const resultFilter = filterActivity.filter((activity) => activity.season === action.payload)
-      return {...state, activities: action.payload === "default"? state.copyActivities : resultFilter} 
+      return {
+        ...state,
+        activities: action.payload === "default"
+        ? state.copyActivities 
+        : resultFilter} 
 
     case FILTER_ACTIVITY_FOR_NAME: 
       const filterAc = [...state.copyActivities]
       const resultFilterAc = filterAc.filter((activity) => activity.ID === action.payload ) 
-      return {...state, activities: action.payload === "default" ? state.copyActivities : resultFilterAc}  
+      return {
+        ...state,
+        activities: action.payload === "default"
+        ? state.copyActivities 
+        : resultFilterAc}
+          
     default:
       return { ...state };
   }

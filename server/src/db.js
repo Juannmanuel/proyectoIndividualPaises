@@ -30,8 +30,7 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 const { Country, Activity } = sequelize.models;
 
-// Aca vendrian las relaciones
-// Product.hasMany(Reviews);
+//Se definen relaciones de muchos a muchos entre los modelos Country y Activity utilizando el método belongsToMany, especificando la tabla intermedia 'CountryActivity' y desactivando los timestamps
 Country.belongsToMany(Activity, { through: 'CountryActivity', timestamps: false });
 Activity.belongsToMany(Country, { through: 'CountryActivity', timestamps: false });
 

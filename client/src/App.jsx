@@ -7,7 +7,7 @@ import Detail from "./components/Detail/Detail";
 import { LandingPage } from "./components/LandingPage/landingPage";
 import NavBar from "./components/Nav/NavBar";
 import Form from "./components/Form/Form";
-import style from "./App.css"
+
 
 function App() {
 
@@ -17,7 +17,8 @@ function App() {
 
 
   return (
-    <div className={style.container}>
+    <div className="App" >
+    
     {location.pathname !== "/" && <NavBar />}
     
        

@@ -1,89 +1,38 @@
-/* Card.module.css */
-
-/* Estilos para el contenedor de la tarjeta */
 .card {
-  /* Configuración del tamaño y margen de la tarjeta */
-  width: 250px; /* Ajusta según tus necesidades */
-  margin: 20px; /* Espacio entre las tarjetas */
+  background-color: #6b6de2;
+  border: 5px solid #575ae8;
+  border-radius: 8px;
+  padding: 16px;
+  margin: 16px;
+  box-shadow: 0 4px 6px rgba(231, 27, 27, 0.1);
+  text-align: center;
+  transition: transform 0.3s ease-in-out;
+  width: 270px;
 
-  /* Configuración de la apariencia visual */
-  background-color: #164e92c3; /* Color de fondo de la tarjeta */
-  border: 2px solid #00000046; /* Borde alrededor de la tarjeta */
-  box-shadow: 5px 10px 10px rgb(27, 26, 26); /* Sombra suave */
-
-  /* Alinear el contenido al centro */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+  }
 }
 
-/* Estilos para la imagen de la bandera */
+.titulo {
+  font-size: 1.5rem;
+  margin: 0;
+  text-decoration: none;
+  color: rgb(255, 255, 255);
+}
+
 .cardimg {
-  /* Ajusta el tamaño de la imagen */
-  width: 100%; /* La imagen ocupará todo el ancho del contenedor */
+  width: 230px;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 16px 0;
 
-  /* Añade un borde alrededor de la imagen */
-  overflow: hidden;
-  border-radius: 8px  ;
-  /* Agrega efecto de sombra a la imagen cuando se pasa el mouse */
-  transition: transform 0.2s ease-in-out;
 }
 
-.cardimg:hover {
-  transform: scale(1.15); /* Escala ligeramente la imagen al pasar el mouse */
+.subTitulo {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+  color: #ffffff;
 }
-
-/* Estilos para los títulos */
-h2 {
-  /* Espaciado y margen para los títulos */
-  margin: 10px 0;
-  transition: color #000 0.20s ease-in-out;
-
-  /* Estilo del texto */
-  font-size: 1.5rem; /* Tamaño del título */
-  color: #000000; /* Color del texto */
-}
-
-h3 {
-  /* Estilo del subtítulo */
-  font-size: 1.2rem; /* Tamaño del subtítulo */
-  color: #000000; /* Color del subtítulo */
-}
-/* background-color: Cambia el color de fondo de la tarjeta.
-border: Agrega un borde a la tarjeta.
-box-shadow: Crea una sombra alrededor de la tarjeta para darle profundidad.
-Dimensiones y espaciado:
-
-width y height: Ajusta el tamaño de la tarjeta.
-padding y margin: Controla el espacio interno y externo alrededor de la tarjeta.
-Texto y tipografía:
-
-font-family: Cambia el tipo de fuente del texto.
-font-size: Ajusta el tamaño del texto en la tarjeta.
-text-align: Controla la alineación del texto en la tarjeta.
-color: Cambia el color del texto.
-Imagen y contenido:
-
-background-image: Agrega una imagen de fondo a la tarjeta.
-background-size: Controla cómo se ajusta la imagen de fondo.
-object-fit: Ajusta cómo se muestra la imagen dentro de su contenedor.
-overflow: Controla cómo se maneja el contenido que excede el tamaño de la tarjeta.
-Transiciones y animaciones:
-
-transition: Agrega efectos de transición suaves a las propiedades CSS cuando cambian.
-transform: Aplica transformaciones como rotaciones o escalados.
-Efectos visuales:
-
-opacity: Controla la opacidad de la tarjeta y su contenido.
-filter: Aplica filtros visuales como desenfoque o ajustes de color.
-Posicionamiento:
-
-position: Controla el método de posicionamiento (por ejemplo, absoluto, relativo, fijo).
-top, bottom, left, right: Ajusta la posición de la tarjeta dentro de su contenedor.
-Pseudoclases y pseudoelementos:
-
-:hover, :active, :focus: Aplica estilos específicos cuando el usuario interactúa con la tarjeta.
-::before y ::after: Agrega contenido adicional antes o después del contenido real de la tarjeta.
-Flexbox o Grid:
-
-Utiliza Flexbox o CSS Grid para controlar la disposición y el diseño interno de los elementos en la tarjeta. */

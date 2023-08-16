@@ -1,70 +1,117 @@
-/* Detail.module.css */
-
-/* Estilos para el contenedor del detalle */
-.detailContainer {
-  padding: 10px;
-  margin-top: 30px;
-  border: 1px solid #ac9d9d;
-  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
-  background-color: #ffffff;
+.container {
+  background-color: #0056b3;
   display: flex;
-  flex-direction: column; /* Cambiado de 'row' a 'column' */
-  align-items: center; /* Alineado al centro horizontal */
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
 }
 
-/* Estilos para los títulos del detalle */
-.detailTitle {
-  font-size: 2rem;
-  color: #160f0f;
-  margin-bottom: 10px;
+.title {
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-/* Estilos para la imagen en el detalle */
-.detailImage img {
-  border-radius: 20px;
+.image {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.image img {
   max-width: 100%;
+  height: auto;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para los párrafos en el detalle */
-.detailParagraph {
-  font-size: 1.1rem;
-  line-height: 1;
-  color: #010000;
-  margin-bottom: 15px;
+.list {
+  width: 100%;
+  max-width: 400px;
 }
 
-/* Estilos para el botón */
-.detailButton {
-  background-color: #007bff;
-  color: #ffffff;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 4px;
-  cursor: pointer;
-  transition: background-color 0.2s ease-in-out;
+.list ul {
+  list-style: none;
+  padding: 0;
 }
 
-.detailButton:hover {
-  background-color: #7394b7;
+.list li {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #333;
 }
 
-/* Estilos para la lista de actividades */
-.detailActivities {
-  list-style-type: disc;
-  padding-left: 20px;
-  text-align: left; /* Alineado a la izquierda */
-}
-
-/* Estilos para los elementos de la lista */
-.detailActivities li {
-  font-size: 1.1rem;
-  color: #555555;
-  margin-bottom: 5px;
-}
-
-/* Estilos para el párrafo y encabezados secundarios */
-.detailParrafo {
+.info {
   text-align: left;
-  font-size: 22px;
-  margin-top: 20px; /* Agregado margen superior */
+  margin-top: 20px;
+}
+
+.info h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.info p {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #666;
+}
+
+.info a button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.info a button:hover {
+  background-color: #0056b3;
+}
+
+.containerActivities {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.containerActivities h2 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.containerActivities ul {
+  list-style: none;
+  padding: 0;
+  text-align: left;
+}
+
+.containerActivities li {
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #666;
+}
+
+.containerActivities p {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+.containerActivities button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  font-size: 14px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.containerActivities button:hover {
+  background-color: #0056b3;
 }

@@ -1,9 +1,9 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect } from "react";
 import { getActivities, filterActivities, deleteActivity, filterActivityForName } from "../../redux/actions";
-import CardsActivities from "./CardsActivities";
-import { NavLink } from "react-router-dom";
 import style from "./Activities.module.css"
+
+
 
 function Activities(props) {
   const activities = useSelector((state) => state.activities);
@@ -20,6 +20,7 @@ dispatch(filterActivities(event.target.value))
   }
 const deleteAc = (event) => {
 dispatch(deleteActivity(event.target.name))
+dispatch(getActivities())
 
 }
 const handlerFilterForName = (event) => {
@@ -27,22 +28,20 @@ dispatch(filterActivityForName(event.target.value))
 }
 
   const generateCardsActivities = () => {
-    
-    return activities.map((activity) => {
-      return <div key={activity.ID}>
-        <div key={activity.ID}>
-        <CardsActivities
-        className={style.card} 
-        key={activity.ID}
-        idPais={activity.Countries}
-        name={activity.name}
-        difficulty={activity.difficulty}
-        season={activity.season}
-       />
+    return activities.map((activity) =>{
+     return <div className={style.card} key={activity.ID}>
+        <h2>Actividad: {activity.name}</h2>
+        <h2>Dificultad: {activity.difficulty}</h2>
+        <h2>Temporada: {activity.season}</h2>
+        <h2>Paises: {activity.Countries?.map(el => {
+            return <li key={el.id}>{el.commonName}</li>
+        })} </h2>
+        <input className={style.deleteButton} type="submit" value="delete" onClick={deleteAc} name={activity.ID}/>
+        
       </div>
-      <input className={style.deleteButton} type="submit" value="delete" onClick={deleteAc} name={activity.ID} />
-      </div>
-    })
+        
+      })
+
   }
   const generateListActivities = () => {
     return copyActivities.map((activity) => {
@@ -59,12 +58,13 @@ dispatch(filterActivityForName(event.target.value))
         <option className={style.option} value="Otoño">otoño</option>
         <option className={style.option} value="Primavera">primavera</option>
       </select>
-      <select className={style.container} onChange={handlerFilterForName}>
-      <option value="default">seleccione una actividad...</option>
+      <div> 
+      <select className={style.select} onChange={handlerFilterForName}>
+      <option value="default">Choose an activity</option>
         {generateListActivities()}
       </select>
-      
-      <div  className={style.container}>{generateCardsActivities()}</div>
+      </div> 
+      <div className={style.card}>{generateCardsActivities()}</div>
       
     </div>
   );

@@ -7,7 +7,7 @@ const PORT = 3001;
 conn.sync({force: false }).then(() => {
   server.listen(PORT, async () => {
      const fullDB = await Country.findAll()
-    if (!fullDB.length) {
+     if (!fullDB.length) {
       const { data } = await axios("http://localhost:5000/countries")
       const countryDB = data.map((pais) => {
         return {

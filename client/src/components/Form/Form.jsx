@@ -12,7 +12,18 @@ const dispatch = useDispatch()
 const [input, setInput] = useState({name: "", difficulty: "", season: "", idPais: []})
 const [errors, setErrors] = useState({})
 
+
+useEffect(() => {
+
+dispatch(getCountries())
+
+},[])
+    
+    
+
+
 const handlerChange = (event) =>{
+  
     setInput({
         ...input,
         [event.target.name] : event.target.value
@@ -22,7 +33,15 @@ const handlerChange = (event) =>{
         [event.target.name] : event.target.value,
     }))
 }
+
 const handlerSelect = (event) =>{
+    
+    
+    let countriesFilter = input.idPais.includes(event.target.value)
+    if(countriesFilter){
+       return alert("no se pueden repetir paises")
+    }   
+   
     setInput({
         ...input,
         idPais: [...input.idPais,event.target.value]
@@ -32,6 +51,7 @@ const handlerSelect = (event) =>{
         idPais: [...input.idPais,event.target.value]
     }))
 } 
+
 const handlerdisable = () =>{
     // Obtener un array con los nombres de las propiedades del objeto error
      const errorFields = Object.keys(errors);
@@ -47,11 +67,8 @@ const handlerSubmit = (event) => {
     
 }
 
-useEffect(() => {
-    dispatch(getCountries())
-    
-},[])
 
+//["ARG","KEN"]
 
 
 
@@ -75,19 +92,20 @@ useEffect(() => {
             <label className={style.label}>Paises: </label>
             <select onChange={handlerSelect} name="idPais">
                 
-                
             {countries.map(country => {
                 return <option className={style.option} key={country.id} value={country.id}>{country.commonName}</option>
             })}    
             </select>
+                
+                
             {errors.idPais && <p>{errors.idPais}</p>}
             <ul className={style.ul}>{input.idPais.map(pais => <li key={pais}>{pais}</li>)}</ul>
             <input className={style.input} type="submit" disabled={handlerdisable()} />
+        </form>
             
 
                 
             
-        </form>
     )
 } 
 //codigo dehalo a la mitad

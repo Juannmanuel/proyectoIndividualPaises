@@ -10,11 +10,11 @@ function NavBar(){
 
     return(
         <nav className={style.nav}>
-        <SearchBar />
+        
         <NavLink to={"/home"}><button  className={style.button}>Home</button></NavLink>
-        <NavLink to={"/"}><button className={style.button}>LandPage</button></NavLink>
-        <NavLink to={"/activities"}><button>activities</button></NavLink>
+        <NavLink to={"/activities"}><button>Activities</button></NavLink>
         <NavLink to={"/form"}><button>Create Activity</button></NavLink>
+        
         </nav>   
 ) 
 }

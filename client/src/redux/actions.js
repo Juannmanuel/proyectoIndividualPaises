@@ -60,12 +60,7 @@ export function postActivies(state){
     }
 }
 
-export function filter() {
-    return {
-        type: FILTER,
-        payload: null
-    }
-}
+
 export function order(parametro) {
     return {
         type: ORDER,
@@ -108,3 +103,15 @@ export function filterActivityForName(parametro){
         payload: parametro
     }
 } 
+
+export function updateActivity (id, state){
+    return async (dispatch) => {
+        try {
+            
+            const { data } = await axios.put(`http://localhost:3001/activities/${id}`, state)
+            alert(data.message)
+        } catch (error) {
+            console.log(error.message)
+        }
+    }
+}
